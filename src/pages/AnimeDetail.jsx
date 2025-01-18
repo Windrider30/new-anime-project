@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { SearchContext } from '../context/SearchContext'
-import './AnimeDetail.css'
 
 function AnimeDetail() {
   const { id } = useParams()
