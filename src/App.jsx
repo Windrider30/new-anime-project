@@ -1,17 +1,13 @@
-import React, { useContext } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { SearchContext } from './context/SearchContext'
-import SearchBar from './components/SearchBar'
-import AnimeCard from './components/AnimeCard'
+import Navigation from './components/Navigation'
+import HomePage from './pages/HomePage'
 import AnimeDetail from './pages/AnimeDetail'
 import NotFound from './pages/NotFound'
 import './App.css'
 
 function App() {
-  const { animeList, loading, fetchAnime, fetchPopularAnime } = useContext(SearchContext)
-  const navigate = useNavigate()
-
   return (
     <>
       <Helmet>
@@ -22,45 +18,13 @@ function App() {
         <meta property="og:description" content="Your ultimate guide to discovering anime series and movies." />
       </Helmet>
 
-      <div className="nav-buttons">
-        <button className="nav-button" onClick={() => navigate('/')}>
-          Home
-        </button>
-        <button 
-          className="nav-button"
-          onClick={() => {
-            fetchPopularAnime()
-            navigate('/')
-          }}
-        >
-          Popular Anime
-        </button>
-      </div>
-
-      <div className="title-container">
-        <h1 className="animated-title">The Anime Directory</h1>
-      </div>
-
-      <div className="search-container">
-        <div className="search-controls">
-          <SearchBar />
-        </div>
-        {loading ? (
-          <div>Loading anime...</div>
-        ) : (
-          <Routes>
-            <Route path="/" element={
-              <div className="anime-grid">
-                {animeList.map((anime) => (
-                  <AnimeCard key={anime.id} anime={anime} />
-                ))}
-              </div>
-            } />
-            <Route path="/anime/:id" element={<AnimeDetail />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        )}
-      </div>
+      <Navigation />
+      
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/anime/:id" element={<AnimeDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   )
 }

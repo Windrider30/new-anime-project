@@ -1,15 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { SearchContext } from '../context/SearchContext'
+import './AnimeDetail.css'
 
 function AnimeDetail() {
   const { id } = useParams()
-  const [anime, setAnime] = React.useState(null)
-  const [loading, setLoading] = React.useState(true)
-  const { searchQuery, fetchAnime } = useContext(SearchContext)
+  const [anime, setAnime] = useState(null)
+  const [loading, setLoading] = useState(true)
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchAnimeDetails = async () => {
       try {
         const response = await fetch(`https://kitsu.io/api/edge/anime/${id}`)
