@@ -24,13 +24,29 @@ export const SearchProvider = ({ children }) => {
     }
   }
 
+  const fetchPopularAnime = async () => {
+    setLoading(true)
+    try {
+      const response = await fetch(
+        'https://kitsu.io/api/edge/anime?sort=popularityRank&page[limit]=20'
+      )
+      const data = await response.json()
+      setAnimeList(data.data)
+    } catch (error) {
+      console.error('Error fetching popular anime:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <SearchContext.Provider value={{
       searchQuery,
       setSearchQuery,
       animeList,
       loading,
-      fetchAnime
+      fetchAnime,
+      fetchPopularAnime
     }}>
       {children}
     </SearchContext.Provider>

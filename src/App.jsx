@@ -9,7 +9,7 @@ import NotFound from './pages/NotFound'
 import './App.css'
 
 function App() {
-  const { animeList, loading, fetchAnime } = useContext(SearchContext)
+  const { animeList, loading, fetchAnime, fetchPopularAnime } = useContext(SearchContext)
   const navigate = useNavigate()
 
   return (
@@ -22,16 +22,29 @@ function App() {
         <meta property="og:description" content="Your ultimate guide to discovering anime series and movies." />
       </Helmet>
 
-      <button className="home-button" onClick={() => navigate('/')}>
-        Home
-      </button>
+      <div className="nav-buttons">
+        <button className="nav-button" onClick={() => navigate('/')}>
+          Home
+        </button>
+        <button 
+          className="nav-button"
+          onClick={() => {
+            fetchPopularAnime()
+            navigate('/')
+          }}
+        >
+          Popular Anime
+        </button>
+      </div>
 
       <div className="title-container">
         <h1 className="animated-title">The Anime Directory</h1>
       </div>
 
       <div className="search-container">
-        <SearchBar />
+        <div className="search-controls">
+          <SearchBar />
+        </div>
         {loading ? (
           <div>Loading anime...</div>
         ) : (
