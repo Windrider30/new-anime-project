@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { SearchContext } from '../context/SearchContext'
-import './AnimeDetail.css'
 
 function AnimeDetail() {
   const { id } = useParams()
@@ -39,7 +38,38 @@ function AnimeDetail() {
         )}
       </Helmet>
 
-      {/* Rest of your detail page content */}
+      <div className="detail-header">
+        <img
+          src={anime.attributes.posterImage?.large}
+          alt={anime.attributes.canonicalTitle}
+        />
+        <div className="header-content">
+          <h1>{anime.attributes.canonicalTitle}</h1>
+          <p>{anime.attributes.synopsis}</p>
+        </div>
+      </div>
+      <div className="detail-info">
+        <h2>Details</h2>
+        <p>Status: {anime.attributes.status}</p>
+        <p>Episodes: {anime.attributes.episodeCount}</p>
+        <p>Rating: {anime.attributes.averageRating}</p>
+        <p>Age Rating: {anime.attributes.ageRatingGuide}</p>
+        <div className="streaming-links">
+          <h3>Where to Watch:</h3>
+          <p>
+            Check availability on: {' '}
+            <a
+              href={`https://www.justwatch.com/us/search?q=${encodeURIComponent(
+                anime.attributes.canonicalTitle
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              JustWatch
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
   )
 }
