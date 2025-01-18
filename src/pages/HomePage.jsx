@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async'
 import { SearchContext } from '../context/SearchContext'
 import SearchBar from '../components/SearchBar'
 import AnimeCard from '../components/AnimeCard'
-import './HomePage.css'
 
 function HomePage() {
   const { animeList, loading } = useContext(SearchContext)
