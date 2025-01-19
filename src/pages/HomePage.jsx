@@ -14,6 +14,14 @@ function HomePage() {
       </div>
 
       <div className="search-container">
+        <div className="welcome-text">
+          <p className="anime-style-text">
+            Whispers of adventure fill the air... The Anime Directory beckons. 
+            Find your next obsession, or rediscover the magic that first ignited 
+            your passion. May your anime journey be filled with laughter, tears, 
+            and endless excitement! Thank you for choosing The Anime Directory.
+          </p>
+        </div>
         <div className="search-controls">
           <SearchBar />
         </div>

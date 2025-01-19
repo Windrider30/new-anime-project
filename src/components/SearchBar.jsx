@@ -22,7 +22,7 @@ function SearchBar() {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search anime..."
       />
-      <button type="submit">Search</button>
+      <button type="submit" className="search-button">Search</button>
     </form>
   )
 }
