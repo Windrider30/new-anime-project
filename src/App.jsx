@@ -20,6 +20,10 @@ function App() {
 
       <Navigation />
       
+      <div className="title-container">
+        <h1 className="animated-title">The Anime Directory</h1>
+      </div>
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/anime/:id" element={<AnimeDetail />} />

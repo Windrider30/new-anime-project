@@ -1,44 +1,59 @@
-/* Add these new styles for AnimeDetail */
-.anime-detail {
-  max-width: 1200px;
-  margin: 2rem auto;
+/* Add these new styles for the title */
+.title-container {
+  text-align: center;
+  margin: 2rem 0;
   padding: 1rem;
+  position: relative;
 }
 
-.detail-header {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
+.animated-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff4757;
+  background: linear-gradient(90deg, #ff4757, #ff6b81, #ff4757);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
 }
 
-.detail-header img {
-  width: 300px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.animated-title::before,
+.animated-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 4px;
+  background: #ff4757;
+  transform: translateY(-50%);
+  animation: sparkle 2s infinite;
 }
 
-.header-content {
-  flex: 1;
+.animated-title::before {
+  left: -60px;
 }
 
-.header-content h1 {
-  margin-top: 0;
-  color: var(--primary-color);
+.animated-title::after {
+  right: -60px;
 }
 
-.detail-info {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
-.streaming-links a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.streaming-links a:hover {
-  text-decoration: underline;
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
 }
