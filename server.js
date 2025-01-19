@@ -8,8 +8,17 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-// Serve static files from the Vite build
+// Serve static files
 app.use(express.static(path.join(__dirname, 'dist')));
+
+// Sitemap route
+app.get('/sitemap.xml', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'sitemap.xml'), {
+    headers: {
+      'Content-Type': 'application/xml'
+    }
+  });
+});
 
 // Handle client-side routing
 app.get('*', (req, res) => {
@@ -17,5 +26,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
