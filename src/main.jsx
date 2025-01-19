@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { SearchProvider } from './context/SearchContext'
 import App from './App'
-import './App.css'
+import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

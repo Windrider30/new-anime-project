@@ -1,67 +1,71 @@
-/* Add version query string to font import */
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap&v=1.0.1');
+/* Add new font import */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap&v=1.0.3');
 
-/* Rest of the CSS remains the same */
+/* Update welcome text styles */
 .welcome-text {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 40px;
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 50px;
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border: 2px solid #ff4757;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 3px solid #ff4757;
 }
 
 .anime-style-text {
-  font-family: 'Mochiy Pop One', sans-serif !important;
-  font-size: 2rem !important;
-  line-height: 1.6;
-  color: #333;
+  font-family: 'Audiowide', cursive !important;
+  font-size: 2.5rem !important;
+  font-weight: bold;
+  line-height: 1.8;
+  color: #222;
   text-align: center;
   animation: text-fade-in 1.5s ease-in-out;
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 900px;
   display: block;
-  padding: 20px;
+  padding: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Update search bar styles */
 .search-bar {
-  margin: 40px auto;
+  margin: 50px auto;
   display: flex;
-  gap: 15px;
-  max-width: 800px;
-  padding: 20px;
+  gap: 20px;
+  max-width: 900px;
+  padding: 30px;
 }
 
 .search-bar input {
   flex: 1;
-  padding: 20px;
-  border: 2px solid #ff4757;
-  border-radius: 12px;
-  font-size: 1.4rem !important;
-  font-family: 'Mochiy Pop One', sans-serif !important;
-  height: 60px;
-  min-width: 400px;
+  padding: 25px;
+  border: 3px solid #ff4757;
+  border-radius: 15px;
+  font-size: 1.6rem !important;
+  font-family: 'Audiowide', cursive !important;
+  height: 70px;
+  min-width: 500px;
 }
 
 .search-bar .search-button {
-  padding: 20px 50px;
+  padding: 25px 60px;
   background: #ff4757;
   color: white;
   border: none;
-  border-radius: 12px;
+  border-radius: 15px;
   cursor: pointer;
-  font-size: 1.4rem !important;
+  font-size: 1.6rem !important;
   font-weight: bold;
   transition: all 0.3s ease;
-  font-family: 'Mochiy Pop One', sans-serif !important;
-  height: 60px;
+  font-family: 'Audiowide', cursive !important;
+  height: 70px;
 }
 
+/* Enhanced animations */
 @keyframes text-fade-in {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -69,12 +73,34 @@
   }
 }
 
+/* Center everything perfectly */
 .search-container {
   text-align: center;
-  padding: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
 }
 
 .welcome-text p {
   margin: 0;
   padding: 0;
+}
+
+/* Add some glow effect */
+.anime-style-text span {
+  display: block;
+  margin: 15px 0;
+  animation: text-glow 2s infinite alternate;
+}
+
+@keyframes text-glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 71, 87, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 71, 87, 0.8);
+  }
 }

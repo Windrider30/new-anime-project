@@ -16,13 +16,13 @@ function HomePage() {
       <div className="search-container">
         <div className="welcome-text">
           <p className="anime-style-text">
-            <span style={{ display: 'block' }}>Whispers of adventure fill the air...</span>
-            <span style={{ display: 'block' }}>The Anime Directory beckons.</span>
-            <span style={{ display: 'block' }}>Find your next obsession, or rediscover</span>
-            <span style={{ display: 'block' }}>the magic that first ignited your passion.</span>
-            <span style={{ display: 'block' }}>May your anime journey be filled with</span>
-            <span style={{ display: 'block' }}>laughter, tears, and endless excitement!</span>
-            <span style={{ display: 'block' }}>Thank you for choosing The Anime Directory.</span>
+            <span>Whispers of adventure fill the air...</span>
+            <span>The Anime Directory beckons.</span>
+            <span>Find your next obsession, or rediscover</span>
+            <span>the magic that first ignited your passion.</span>
+            <span>May your anime journey be filled with</span>
+            <span>laughter, tears, and endless excitement!</span>
+            <span>Thank you for choosing The Anime Directory.</span>
           </p>
         </div>
         <div className="search-controls">
