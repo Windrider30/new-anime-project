@@ -28,14 +28,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Anime Details (Dynamic) -->
-  <url>
-    <loc>https://theanimedirectory.xyz/anime/:id</loc>
-    <lastmod>2024-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- 404 Page -->
   <url>
     <loc>https://theanimedirectory.xyz/404</loc>
