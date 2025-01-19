@@ -11,13 +11,10 @@ const PORT = process.env.PORT || 10000;
 // Serve static files
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Sitemap route
+// Sitemap route with proper headers
 app.get('/sitemap.xml', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'sitemap.xml'), {
-    headers: {
-      'Content-Type': 'application/xml'
-    }
-  });
+  res.set('Content-Type', 'application/xml');
+  res.sendFile(path.join(__dirname, 'public', 'sitemap.xml'));
 });
 
 // Handle client-side routing

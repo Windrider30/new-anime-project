@@ -1,21 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
   <url>
     <loc>https://theanimedirectory.xyz/</loc>
-    <lastmod>2024-01-18</lastmod>
+    <lastmod>2024-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Popular Anime -->
   <url>
     <loc>https://theanimedirectory.xyz/popular</loc>
-    <lastmod>2024-01-18</lastmod>
+    <lastmod>2024-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Search Page -->
   <url>
     <loc>https://theanimedirectory.xyz/search</loc>
-    <lastmod>2024-01-18</lastmod>
+    <lastmod>2024-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Anime Detail Pages (Example with actual anime IDs) -->
+  <url>
+    <loc>https://theanimedirectory.xyz/anime/1</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theanimedirectory.xyz/anime/2</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Add more anime detail pages as needed -->
+
+  <!-- 404 Page -->
+  <url>
+    <loc>https://theanimedirectory.xyz/404</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.1</priority>
   </url>
 </urlset>
