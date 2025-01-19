@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { SearchContext } from '../context/SearchContext'
+import { useSearchContext } from '../context/SearchContext'
 
 function SearchBar() {
   const [query, setQuery] = useState('')
-  const { setSearchQuery, fetchAnime } = useContext(SearchContext)
+  const { setSearchQuery, fetchAnime } = useSearchContext()
   const navigate = useNavigate()
 
   const handleSearch = (e) => {
